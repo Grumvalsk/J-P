@@ -15,3 +15,20 @@ a{
   font-size: x-large;
   letter-spacing:5px;
 }
+
+.sezione {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 2px dashed brown; /* Cambia solid con dashed o dotted */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aggiunge un'ombra per un effetto più morbido */
+}
+
+img{
+  width: 30px;
+  height: 30px;
+}

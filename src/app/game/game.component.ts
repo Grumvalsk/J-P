@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PersonaggioService } from '../personaggio.service';
 import { Personaggio } from '../personaggio';
 
@@ -7,13 +7,17 @@ import { Personaggio } from '../personaggio';
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.scss'],
 })
-export class GameComponent {
-  personaggio: Personaggio = new Personaggio("", "");
+export class GameComponent implements OnInit {
+  personaggio!: Personaggio; // Non inizializzare subito
   isJumping = false; // Stato che controlla se il personaggio è già in salto
-  punteggio:number=0;
+  punteggio: number = 0;
 
-  constructor(private personaggioService: PersonaggioService) {
-    this.personaggio = personaggioService.getPersonaggio();
+  constructor(private personaggioService: PersonaggioService) {}
+
+  ngOnInit() {
+    // Recupera il personaggio selezionato all'avvio del componente
+    this.personaggio = this.personaggioService.getPersonaggio();
+    console.log("Personaggio selezionato nel gioco:", this.personaggio.nome);
   }
 
   // Funzione per far saltare il personaggio
@@ -22,7 +26,6 @@ export class GameComponent {
       this.isJumping = true; // Impostiamo lo stato su 'salto in corso'
 
       const personaggioElement = document.getElementById('personaggio');
-
       if (personaggioElement) {
         personaggioElement.classList.add('jump'); // Aggiungi la classe che avvia l'animazione
       }

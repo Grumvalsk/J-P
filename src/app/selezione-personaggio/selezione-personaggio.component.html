@@ -5,7 +5,7 @@
       <label for="">{{personaggi[(currentIndex - 1 + items.length) % items.length].nome}}</label>
     </div>
     <div class="carousel-item center">
-     <a href=""> <img [src]="personaggi[currentIndex].immagine" alt="Character Image">
+     <a (click)="scelgiPersonaggio(personaggi[currentIndex])"> <img [src]="personaggi[currentIndex].immagine" alt="Character Image">
       <label for="">{{personaggi[currentIndex].nome}}</label></a>
     </div>
     <div class="carousel-item right" [ngClass]="{'center': currentIndex === 2}">

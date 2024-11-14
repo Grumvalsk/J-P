@@ -28,7 +28,7 @@ export class SelezionePersonaggioComponent  {
 
   scelgiPersonaggio(personaggio:Personaggio){
     this.service.setPersonaggio(personaggio)
-    this.rotte.navigate(['/menu'])
+    this.rotte.navigate(['/game'])
 
   }
   // Funzione per spostare il carosello a sinistra
