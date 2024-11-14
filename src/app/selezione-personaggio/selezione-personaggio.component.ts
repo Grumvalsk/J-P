@@ -1,5 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { Personaggio } from '../personaggio';
+import { PersonaggioService } from '../personaggio.service';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-selezione-personaggio',
@@ -22,8 +24,13 @@ export class SelezionePersonaggioComponent  {
   // Indice dell'immagine centrale
   currentIndex = 0;
 
-  constructor() { }
+  constructor(private service:PersonaggioService,private rotte:Router) { }
 
+  scelgiPersonaggio(personaggio:Personaggio){
+    this.service.setPersonaggio(personaggio)
+    this.rotte.navigate(['/menu'])
+
+  }
   // Funzione per spostare il carosello a sinistra
   moveLeft() {
     this.currentIndex = (this.currentIndex - 1 + this.items.length) % this.items.length;

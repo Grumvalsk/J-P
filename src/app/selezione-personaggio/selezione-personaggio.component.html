@@ -5,8 +5,8 @@
       <label for="">{{personaggi[(currentIndex - 1 + items.length) % items.length].nome}}</label>
     </div>
     <div class="carousel-item center">
-      <img [src]="personaggi[currentIndex].immagine" alt="Character Image">
-      <label for="">{{personaggi[currentIndex].nome}}</label>
+     <a href=""> <img [src]="personaggi[currentIndex].immagine" alt="Character Image">
+      <label for="">{{personaggi[currentIndex].nome}}</label></a>
     </div>
     <div class="carousel-item right" [ngClass]="{'center': currentIndex === 2}">
       <img [src]="personaggi[(currentIndex + 1) % items.length].immagine" alt="Character Image">
@@ -14,7 +14,7 @@
     </div>
   </div>
 
-  <!-- Bottoni per spostarsi a sinistra e a destra -->
+  <a href="" class="indietro">Menu</a>
   <button (click)="moveLeft()" class="carousel-button left-button">←</button>
   <button (click)="moveRight()" class="carousel-button right-button">→</button>
 </div>

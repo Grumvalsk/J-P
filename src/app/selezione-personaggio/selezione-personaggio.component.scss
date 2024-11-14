@@ -96,4 +96,21 @@ img {
 .right-button {
   right: 10px;
 }
+.carousel-item a {
+  color: black;
+  display: inline-flex; /* Assicurati che `<a>` segua le dimensioni dell'immagine */
+  padding: 0;
+  flex-direction: column;
+  gap: 5px;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* Allarga `<a>` al 100% del contenitore */
+  height: 100%; /* Imposta l'altezza al 100% */
+}
 
+.indietro{
+  margin-right: 0;
+  padding: 10px;
+  color: black;
+}

@@ -3,11 +3,13 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { GameComponent } from './game/game.component';
 import { SelezionePersonaggioComponent } from './selezione-personaggio/selezione-personaggio.component';
 import { SettingsComponent } from './settings/settings.component';
+import { HomePage } from './home/home.page';
 
 const routes: Routes = [
   { path: 'game', component: GameComponent },
   { path: 'selezione-personaggio', component: SelezionePersonaggioComponent },
   {path:'settings', component:SettingsComponent},
+  {path:'menu',component:HomePage},
   {path: 'home',loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
 
